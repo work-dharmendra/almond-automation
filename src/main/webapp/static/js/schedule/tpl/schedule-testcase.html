@@ -1,0 +1,32 @@
+<div class="modal fade" id="scheduleTestCase" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-content modal-dialog vertical-align-center vertical-alignment-helper">
+        <div class="modal-header">
+            <a data-dismiss="modal" class="close">×</a>
+            <div class="main-heading">
+                <%= i18next.t("app.testcase.schedule_testcase") %>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="modal-header clearfix mg_0px row">
+                <div class="row">
+                    <select id="envId" data-bind="value:environmentId,options:environments,optionsDefault:{label: '<%= i18next.t("app.select_environment") %>', value:'-1'}"></select>
+                </div>
+                <div class="row">
+                    <input type="text" class="testcase-grid form-control" placeholder="<%= i18next.t("app.testcase.custom_grid_url") %>" data-bind="value:grid" maxlength="255" />
+                </div>
+                <div class="row">
+                    <input type="text" class="form-control" placeholder="<%= i18next.t("app.testcase.custom_parameters") %>" data-bind="value:parameters" maxlength="255" />
+                </div>
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+            <div id="sys-message" class=""></div>
+            <div class="button-wrapper">
+                <button id="scheduleTestCaseBtn" class="btn btn-default btn-primary float-right">
+                    <%= i18next.t("app.testcase.schedule_testcase") %>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

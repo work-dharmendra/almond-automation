@@ -1,0 +1,30 @@
+<div>
+    <div>
+        <table class="table table-striped table-bordered dt-responsive nowrap">
+            <tr>
+                <td><%= i18next.t("app.testcase.command_name") %></td>
+                <td><%= i18next.t("app.testcase.command_element") %></td>
+                <td><%= i18next.t("app.testcase.command_value") %></td>
+                <td><%= i18next.t("app.testcase.command_param") %></td>
+                <td><%= i18next.t("app.comment") %></td>
+                <td><%= i18next.t("app.status") %></td>
+            </tr>
+            <tr>
+                <td><%= command_name %></td>
+                <td><%= command_element %></td>
+                <td><%= command_value %></td>
+                <td><%= command_params %></td>
+                <td><%= comment %></td>
+                <td><%= status %></td>
+            </tr>
+        </table>
+    </div>
+    <div class="show_screenshot">
+        <% if (data != null && data != '') { %>
+            <img src="data:image/gif;base64,<%= data %>" alt="Base64 encoded image" width="100%" height="400"/>
+        <% } else { %>        
+            <span><%= i18next.t("app.testcase.no_screenshot") %>
+        <% }%>        
+        
+    </div>
+</div>

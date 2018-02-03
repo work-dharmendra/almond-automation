@@ -1,0 +1,44 @@
+<div class="modal fade" id="showEnv" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-content modal-dialog vertical-align-center vertical-alignment-helper">
+                <div class="modal-header">
+                    <a data-dismiss="modal" class="close">×</a>
+                    <div class="main-heading">
+                        <%= heading %>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <select id="projectId" data-bind="value:projectId,options:projects,optionsDefault:{label: '<%= i18next.t("app.env.select_project") %>', value:'-1'}"></select>
+                    </div>
+                    <div class="row">
+                        <input type="text" class="env-name form-control" placeholder="<%= i18next.t("app.env.name") %>" data-bind="value:name" maxlength="255" />
+                    </div>
+                    <div class="row">
+                        <textarea type="text" class="env-name form-control" placeholder="<%= i18next.t("app.env.description") %>" data-bind="value:description" maxlength="255" />
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"><input type="text" class="env-name form-control" placeholder="<%= i18next.t("app.env.variable_name") %>" data-bind="value:new_var_name" maxlength="255" /></div>
+                        <div class="col-md-4"><input type="text" class="env-name form-control" placeholder="<%= i18next.t("app.env.variable_value") %>" data-bind="value:new_var_value" maxlength="255" /></div>
+                        <div class="col-1">
+                            <span class="plus" id="add_variable"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="backgrid-container" id="variables"/>            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="sys-message" class=""></div>
+                    <div class="button-wrapper">
+                        <button id="saveEnvironment" class="btn btn-default btn-primary float-right">
+                            <%= i18next.t("app.env.save_env") %>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+    
+</div>

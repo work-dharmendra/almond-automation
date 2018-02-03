@@ -1,0 +1,72 @@
+<div class="status-panel panel panel-default <%= panelClass %>">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+        <%
+            if(testCaseName != null){
+        %>
+        <a class="test_status_heading" data-toggle="collapse" href="#schedule_testcase_<%= id %>"><%= i18next.t('app.testcase.name') %> : <%= testCaseName %> | <%= i18next.t('app.status') %> : <%= status %> | <%= i18next.t('app.totalTime') %> : <%= totalTime %></a>
+        <%
+            } else {
+        %>
+        <a class="test_status_heading" data-toggle="collapse" href="#schedule_testcase_<%= id %>"><%= i18next.t('app.testsuite.testsuite') %> : <%= testSuiteName %> | <%= i18next.t('app.status') %> : <%= status %> | <%= i18next.t('app.totalTime') %> : <%= totalTime %></a>
+        <%
+            }
+        %>
+      </h3>
+    </div>
+    <div id="schedule_testcase_<%= id %>" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <div id="schedule_testcase_child_<%= id %>">
+                
+            </div>
+
+            <%
+                if(testCaseName != null){
+            %>  
+            <div class="status-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a class="test_status_heading" data-toggle="collapse" href="#schedule_testcase_steps_<%= id %>">
+                            <%= i18next.t('app.steps') %>
+                        </a>
+                    </h3>
+                </div>
+
+                <div id="schedule_testcase_steps_<%= id %>" class="panel-body panel-collapse collapse">
+                    <table id="test_case_execution_<%= id %>" class="schedule_status table table-striped table-bordered dt-responsive">
+                        <tr>
+                            <th>
+                                <%= i18next.t('app.testcase.command_name') %>
+                            </th>
+                            <th>
+                                <%= i18next.t('app.testcase.command_element') %>
+                            </th>
+                            <th>
+                                <%= i18next.t('app.testcase.command_value') %>
+                            </th>
+                            <th>
+                                <%= i18next.t('app.testcase.command_param') %>
+                            </th>
+                            <th>
+                                <%= i18next.t('app.comment') %>
+                            </th>
+                            <th>
+                                <%= i18next.t('app.timeTaken') %>
+                            </th>
+                            <th>
+                                <%= i18next.t('app.status') %>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <%
+                }
+            %>
+            
+        </div>
+
+    </div>
+
+</div>

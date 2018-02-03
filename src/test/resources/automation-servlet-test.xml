@@ -1,0 +1,88 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:cache="http://www.springframework.org/schema/cache" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/mvc
+ 		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+ 		http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.dhar.automation"/>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:bk_application.properties</value>
+        </property>
+    </bean>
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close"
+          p:driverClass="${jdbc.driverClassName}" p:jdbcUrl="${jdbc.url}"
+          p:user="${jdbc.username}" p:password="${jdbc.password}"
+
+          p:acquireIncrement="1"
+          p:checkoutTimeout="3000"
+          p:idleConnectionTestPeriod="5"
+          p:maxIdleTime="3"
+          p:maxIdleTimeExcessConnections="1"
+          p:maxPoolSize="30" p:maxStatements="20000" p:maxStatementsPerConnection="1000"
+          p:minPoolSize="1"
+          p:numHelperThreads="1000"
+          p:overrideDefaultUser="${jdbc.username}" p:overrideDefaultPassword="${jdbc.password}"
+          p:propertyCycle="3"
+          p:statementCacheNumDeferredCloseThreads="1"
+          p:testConnectionOnCheckin="true"
+          p:unreturnedConnectionTimeout="7"/>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="namedJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/pages/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation">
+            <value>classpath:hibernate.cfg.xml</value>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${jdbc.dialect}</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.id.new_generator_mappings">false</prop>
+                <!--<prop key="hibernate.transaction.factory_class">org.springframework.transaction.jta.TransactionFactory</prop>-->
+            </props>
+        </property>
+        <property name="packagesToScan" value="com.dhar.automation" />
+    </bean>
+
+    <bean id="txManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <!-- enable the configuration of transactional behavior based on annotations -->
+    <tx:annotation-driven transaction-manager="txManager"/>
+    <!--<bean id="persistenceExceptionTranslationPostProcessor"
+          class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>-->
+
+    <mvc:annotation-driven/>
+</beans>

@@ -1,0 +1,21 @@
+<div class="info">
+    <button data-target="" id="create_testcase" data-toggle="modal" class="btn btn-primary" type="button">
+        <%=i18next.t( "app.testcase.create_testcase") %>
+    </button>
+    <button data-target="" id="schedule_testcase" data-toggle="modal" class="btn btn-primary" type="button">
+        <%=i18next.t( "app.testcase.schedule_testcase") %>
+    </button>
+    <button data-target="" id="copy_testcase" data-toggle="modal" class="btn btn-primary" type="button">
+        <%=i18next.t( "app.testcase.copy_testcase") %>
+    </button>
+    <hr/>
+    <div class="row" class="projects_dropdown">
+        <select id="projectId" data-bind="value:projectId,options:projects,optionsDefault:{label: '<%= i18next.t("app.project.select_project") %>', value:-1}"></select>
+    </div>
+    <hr/>
+    <div>
+        <table id="testcases" class="table table-striped table-bordered dt-responsive nowrap">
+            
+        </table>
+    </div>
+</div>

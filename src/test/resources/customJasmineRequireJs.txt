@@ -1,0 +1,25 @@
+paths: {
+    "jasmine": "../spec/lib/jasmine/jasmine",
+    "jasmine-jquery": "../spec/lib/jasmine-jquery",
+    "jasmine-html": "../spec/lib/jasmine/jasmine-html",
+    "sinon": "../spec/lib/sinon-1.14.1"
+},
+shim: {
+    "jquery": {
+            "exports": "jquery"
+    },
+    "jasmine": {
+       "exports": "jasmine"
+    },
+    "jasmine-html": {
+        deps: ['jasmine'],
+        exports: 'jasmine'
+    },
+    "jasmine-jquery": {
+       "deps" : [ "jasmine", "jquery" ],
+        exports: 'jasmine'
+    },
+    "sinon" : {
+        deps: [ "jquery", "jasmine", "jasmine-jquery" ]
+    }
+}

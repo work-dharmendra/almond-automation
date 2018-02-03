@@ -1,0 +1,38 @@
+<div class="row">
+    <select id="envId"></select>
+    <select id="scheduleId" class="scheduleList"> data-bind="value:scheduleId,options:schedules,optionsDefault:{label: '<%= i18next.t("app.select_schedule") %>', value:-1}"></select>
+    <button id="refresh" class="btn btn-primary">
+        <%= i18next.t("app.testcase.refresh") %>
+    </button>
+</div>
+
+<div class="row">
+    <div class="col2 status-grid-text">
+        <p class="bg-info"><span><%= i18next.t("app.settings.grid_url") %></span> : <span id="gridUrl" data-bind="text:gridUrl"/></p>
+    </div>
+    <div class="col2" style="padding-bottom: 10px;">
+                <span class="label label-primary schedule-stats"><%= i18next.t("app.totalTestCase") %> 
+                    <span id="totalTestCase" class="badge" data-bind="text:totalTestCase"/>
+                </span>
+                <span class="label label-success schedule-stats"><%= i18next.t("app.totalPassTestCase") %> 
+                    <span id="totalPassTestCase" class="badge" data-bind="text:totalPassTestCase"/>
+                </span>
+                <span class="label label-danger schedule-stats"><%= i18next.t("app.totalFailTestCase") %> 
+                    <span id="totalFailTestCase" class="badge" data-bind="text:totalFailTestCase"/>
+                </span>
+                <span class="label label-info schedule-stats"><%= i18next.t("app.totalInProgressCase") %> 
+                    <span id="totalInProgressCase" class="badge" data-bind="text:totalInProgressCase"/>
+                </span>
+                <span class="label label-warning schedule-stats"><%= i18next.t("app.totalNotStartedTestCase") %> 
+                    <span id="totalNotStartedTestCase" class="badge" data-bind="text:totalNotStartedTestCase"/>
+                </span>
+    </div>
+</div>
+
+<div id="execution-list-status">
+
+</div>
+
+<!-- <div class="row" data-bind="collection:executionList11, itemView:'ExecutionListItemView'">
+    
+</div> -->

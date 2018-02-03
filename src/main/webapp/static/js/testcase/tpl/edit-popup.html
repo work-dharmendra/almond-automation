@@ -1,0 +1,27 @@
+<div id="editElementPopup" class="col-8 command_popup" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-content modal-dialog">
+        <div class="modal-header">
+            <a class="close_popup close">×</a>
+            <div class="main-heading">
+                <%= i18next.t("app.edit") %>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-8">
+                    <input type="text" style="width:500px" data-bind="value:element, classesCustom:{hide : commandType, value : 'noninclude' }"></input>
+                    <span data-bind="html:testCaseName, classesCustom:{hide : commandType, value : 'include'}"></span>
+                    <select class="selectTestCase" data-bind="value:element, optionsDefault:{label: '<%= i18next.t("app.testcase.select_testcase") %>', value:'select_testcase'}, classesCustom:{hide : commandType, value : 'include'}"></select>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div id="sys-message" class=""></div>
+            <div class="button-wrapper">
+                <button id="save" class="btn btn-default btn-primary float-right">
+                    <%= i18next.t("app.save") %>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

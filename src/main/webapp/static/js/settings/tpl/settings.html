@@ -1,0 +1,12 @@
+<div class="container col-md-6">
+    <div class="page-header">
+        <h2><%=i18next.t( "app.settings.settings") %></h2>
+    </div>
+    <input type="text" class="form-control" id="grid_url" data-bind="value:gridUrl" maxlength="255" placeholder="<%= i18next.t('app.settings.grid_url') %>">
+
+    <div id="sys-message" class=""></div>
+    <button id="saveSettings" class="btn btn-default btn-primary">
+        <%=i18next.t( "app.settings.save_settings") %>
+    </button>
+
+</div>

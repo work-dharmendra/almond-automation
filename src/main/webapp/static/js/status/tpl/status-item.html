@@ -1,0 +1,39 @@
+<tr>
+    <td>
+        <%= command_name %>
+    </td>
+    <td>
+        <%= command_element %>
+    </td>
+    <td>
+        <%= command_value %>
+    </td>
+    <td>
+        <%= command_params %>
+    </td>
+    <td>
+        <%= comment %>
+    </td>
+    <td>
+        <%= timeTaken %>
+    </td>
+    <td>
+        <%
+        if(status === 'PASS'){ %>
+            <span class="label label-success"><%= i18next.t('app.pass') %></span>
+        <%   } else if(status === 'FAIL'){ %>
+            <span class="label label-danger"><%= i18next.t('app.fail') %></span>
+        <%        } else { %>
+            <span class="label"><%= status %></span>
+        <%        } %>
+        
+        
+    </td>
+</tr>
+<% if (screenshot != null && screenshot != '') { %>
+<tr>
+    <td colspan="7" style="text-align: center">
+            <img src="data:image/gif;base64,<%= screenshot %>" alt="Base64 encoded image" width="100%" height="400"/>
+    </td>
+</tr>
+<% } %>        

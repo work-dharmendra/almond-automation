@@ -1,0 +1,229 @@
+#showTestCase .modal-dialog {
+  width: 90%;
+  padding: 5px
+}
+
+input, textarea{
+    margin-top: 10px;
+}
+
+.info {
+    margin-top: 5px;
+    width: 98%;
+    padding: 10px;
+    padding-top: 20px;
+    border: 2px solid #eee;
+    
+}
+
+.backgrid-container {
+  position: relative;
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  border: 1;
+  scroll: auto;
+  font-size: small;
+}
+
+#commands table{
+    width: 100%;
+    overflow: scroll;
+}
+
+.backgrid-container table td, table th{
+    border : 1px solid;
+    padding: 10px;
+}
+
+.main-heading {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#content {
+    margin-left: 100px;
+}
+
+#showTestCase .modal{
+    width: auto;
+    margin-left: -280px;
+}
+
+.plus {
+    content: url('../img/plus.svg'); 
+    display:block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    align-content: center
+}
+
+.delete {
+    content: url('../img/delete.svg'); 
+    display:block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    align-content: center;
+    float:left;
+}
+.up {
+    content: url('../img/up.svg'); 
+    display:block;
+    cursor: pointer;
+    /*width: 20px;*/
+    height: 20px;
+    align-content: center
+    float:left;
+}
+.runCommand {
+    content: url('../img/run.png'); 
+    display:block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    align-content: center
+}
+
+.down {
+    content: url('../img/down.svg'); 
+    display:block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    align-content: center;
+    float:left;
+}
+.close {
+    content: url('../img/close.svg'); 
+    display:block;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    align-content: center;
+}
+.projects_dropdown {
+    margin-left: 0px;
+    padding: 10px;
+}
+
+.backgrid_command_name{
+    width: 700px;
+}
+
+.form-control {
+    width: 94%;
+}
+
+#variables{
+    .datatableCustom
+}
+.spinner{
+    content: url('../img/spinner.svg'); 
+    position:fixed;
+    z-index:99999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:100%;
+    height: 200px;
+}
+.error {
+  color: #ff0000;
+  background-color: #f2dede;
+  padding: 4px 10px;
+  border-color: #ebccd1;
+}
+.success {
+  padding: 4px 10px;
+  color: #04b404;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.test_status_heading{
+    font-weight: bold;
+}
+
+.schedule_status td {
+  word-break: break-all;
+}
+.schedule_status td:first-child {
+  word-break: unset;
+}
+
+.status-panel{
+  width: 95%;
+}
+#add_variable{
+  margin-top: 15px;
+}
+#add_command{
+  margin-top: 15px;
+}
+#expand{
+  margin-top: 15px; 
+}
+#testcase_new_command{
+  line-height: 50px;
+}
+.status_command_name{
+  word-break: unset;
+}
+#newTestInclude .select2{
+  margin-top: 15px;
+}
+.schedule_screenshot{
+  width: 100%;
+}
+.edit {
+    content: url('../img/edit.svg'); 
+    display:inline;
+    cursor: pointer;
+    align-content: center
+    float:left;
+}
+#editElementPopup .modal-dialog{
+  width: 50%;
+  margin: 0 auto;
+}
+/*#command_list > div > div {
+  border: 1px solid #ddd;
+}*/
+#command_list > div:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+.command_element .command_value .command_params{
+  display: inline;
+}
+.hide{
+  display: none;
+}
+.wrap{
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+.command_popup{
+  position: fixed;
+  z-index: 1000;
+  top: 30%;
+  width: 100%;
+}
+
+.status-grid-text{
+  font-weight: bold;
+  padding: 5px;
+}
+
+.debug-row{
+  padding: 10px;
+}
+
+.schedule-stats{
+  font-size: 15px;
+}

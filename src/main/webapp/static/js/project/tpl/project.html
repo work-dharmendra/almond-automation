@@ -1,0 +1,33 @@
+<div class="modal fade" id="showProject" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a data-dismiss="modal" class="close">×</a>
+                    <div class="main-heading">
+                        <%= heading %>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <input type="text" class="project-name form-control" placeholder="<%= i18next.t("app.project.name") %>" data-bind="value:name" maxlength="255" />
+                    </div>
+                    <div class="row">
+                        <textarea class="project-name form-control" placeholder="<%= i18next.t("app.project.description") %>" data-bind="value:description" maxlength="255" />
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <div class="sys-message" class=""></div>
+                    <div class="button-wrapper">
+                        <button id="saveProject" class="btn btn-default btn-primary float-right">
+                            <%= i18next.t("app.project.save_project") %>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>

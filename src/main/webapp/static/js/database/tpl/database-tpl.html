@@ -1,0 +1,16 @@
+<div class="container col-md-6">
+    <div class="page-header">
+        <h2><%=i18next.t( "app.database.configuration") %></h2>
+        <p><%=i18next.t( "app.database.notready") %></p>
+    </div>
+    <input type="text" class="form-control" id="host" placeholder="<%= i18next.t('app.database.host') %>">
+    <input type="text" class="form-control" id="database" placeholder="<%= i18next.t('app.database.database') %>">
+    <input type="text" class="form-control" id="username" placeholder="<%= i18next.t('app.database.username') %>">
+    <input type="password" class="form-control" id="password" placeholder="<%= i18next.t('app.database.password') %>">
+
+    <div id="sys-message" class=""></div>
+    <button id="prepareDatabase" class="btn btn-default btn-primary">
+        <%=i18next.t( "app.database.prepare_database") %>
+    </button>
+
+</div>
