@@ -13,7 +13,5 @@ public class Test {
         Environment environment = new Environment();
         environment.setName("qa");
         environment.setDescription("description");
-
-        System.out.println(new GsonBuilder().create().toJson(environment));
     }
 }

@@ -35,7 +35,5 @@ public class EnvironmentServiceIT {
     @Test
     public void findAllEnvironment_shouldReturnListOfAllEnvironment(){
         PaginatedList<EnvironmentDTO> paginatedList = environmentService.findAllEnvironment();
-
-        System.out.println(new GsonBuilder().create().toJson(paginatedList));
     }
 }

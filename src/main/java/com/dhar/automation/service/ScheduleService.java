@@ -167,9 +167,6 @@ public class ScheduleService {
         scheduleDTO.totalInProgressCase = scheduleStats.totalInProgressCase;
         scheduleDTO.totalNotStartedTestCase = scheduleStats.totalNotStartedTestCase;
 
-        //Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        //System.out.println(gson.toJson(scheduleDTO));
-
         return scheduleDTO;
     }
 }

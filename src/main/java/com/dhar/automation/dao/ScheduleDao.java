@@ -97,7 +97,6 @@ public class ScheduleDao {
                 .list();
 
         int totalTestCase = 0;
-        System.out.println("DDD");
         if(list != null && list.size() > 0){
             for(Object [] objects : list){
                 com.dhar.automation.domain.Status status = (com.dhar.automation.domain.Status) objects[0];

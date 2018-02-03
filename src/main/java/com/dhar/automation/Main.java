@@ -43,7 +43,6 @@ public class Main {
         testSuite.setName("name");
         testSuite.setDescription("description");
         List<String> list1 = new ArrayList<>();
-        System.out.println(gson.toJson(testSuite));
 
         TestCaseDTO testCaseDTO = new TestCaseDTO();
         testCaseDTO.name = "new testcase";

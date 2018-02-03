@@ -60,7 +60,6 @@ public class ProjectService {
     }
 
     public List<ProjectDTO> findAllProjects() {
-        System.out.println("-----------------------------------------------");
         List<Project> projects = projectDao.findAllProject();
         List<ProjectDTO> projectDTOs = new ArrayList<>();
 

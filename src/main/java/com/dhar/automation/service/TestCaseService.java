@@ -60,7 +60,6 @@ public class TestCaseService {
         List<Long> testCaseIdList = new ArrayList<>();
         testCaseIdList.add(testCase.getId());
         if(testCaseDao.cycleExist(testCase, testCaseIdList)){
-            System.out.println("cycle");
             throw new RuntimeException("a testcase cannot include/invoke testcase which is already added by parent to avoid infinite testcase.");
         }
 

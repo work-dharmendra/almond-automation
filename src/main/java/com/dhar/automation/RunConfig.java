@@ -79,8 +79,5 @@ public class RunConfig {
         params.put("name", "aaa");
         params.put("name1", "aaa");
         runConfig.setParams(params);
-
-        Gson gson = new GsonBuilder().create();
-        System.out.println(gson.toJson(runConfig));
     }
 }

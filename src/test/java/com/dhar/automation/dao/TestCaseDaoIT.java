@@ -32,7 +32,6 @@ public class TestCaseDaoIT {
     @Test
     public void findTestCase_shouldFindTestCaseSuccessfully() {
         TestCaseDTO testCase1 = testCaseService.findTestCase(3l);
-        System.out.println(testCase1);
     }
 
     @Test

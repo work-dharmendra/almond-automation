@@ -24,9 +24,7 @@ public class ByJavaScript extends By implements Serializable {
         JavascriptExecutor js = getJavascriptExecutorFromSearchContext(context);
 
         // call the JS, inspect and validate response
-        System.out.println("return " + script);
         Object response = ((JavascriptExecutor)webDriver).executeScript("return " + script);
-        System.out.println(response);
         List<WebElement> elements = getElementListFromJsResponse(response);
 
         // filter out the elements that aren't descendants of the context node
@@ -72,7 +70,6 @@ public class ByJavaScript extends By implements Serializable {
     private static void filterOutElementsWithoutCommonAncestor(List<WebElement> elements, WebElement ancestor) {
         for (Iterator<WebElement> iter = elements.iterator(); iter.hasNext(); ) {
             WebElement elem = iter.next();
-            System.out.println(elem);
             // iterate over ancestors
             while (!elem.equals(ancestor) && !elem.getTagName().equals("html")) {
                 elem = elem.findElement(By.xpath("./.."));

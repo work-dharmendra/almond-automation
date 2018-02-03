@@ -108,7 +108,6 @@ public class UIController  extends ResponseEntityExceptionHandler {
     @RequestMapping(value = "project", method = RequestMethod.GET)
     @ResponseBody
     public List<ProjectDTO> getAllProject() {
-        System.out.println("DDDDD+++");
         return projectService.findAllProjects();
     }
 
