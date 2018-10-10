@@ -88,7 +88,7 @@ public class TestCaseDaoTest {
     }
 
     @Test
-    public void cycleExist_shouldReturnTrueWhenExistingTestCaseContainIncludeCommandAndNoCycleExist(){
+    public void cycleExist_shouldReturnFalseWhenExistingTestCaseContainIncludeCommandAndNoCycleExist(){
         createTestCaseDatabase();
         List<Long> testCaseIdList = new ArrayList<>();
         testCaseIdList.add(5l);
@@ -100,7 +100,7 @@ public class TestCaseDaoTest {
     }
 
     @Test
-    public void cycleExist_shouldReturnTrueWhenNewTestCaseContainIncludeCommandAndNoCycleExist(){
+    public void cycleExist_shouldReturnFalseWhenNewTestCaseContainIncludeCommandAndNoCycleExist(){
         createTestCaseDatabase();
         List<Long> testCaseIdList = new ArrayList<>();
         TestCase testCase = new TestCase();
