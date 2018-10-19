@@ -36,7 +36,7 @@ public class MacroUtilTest {
     }
 
     @Test
-    public void substituteMacro_shouldReturnNonDefaultValueWhenNoVariableFoundForNonPreDefinedMacro(){
+    public void substituteMacro_shouldReturnNonDefaultValueWhenVariableFoundForNonPreDefinedMacro(){
         RunConfig runConfig = createRunConfig();
         runConfig.getParams().put("name", "nondefault");
         MacroUtil.substituteMacro("${name:${timestamp}}", runConfig);
