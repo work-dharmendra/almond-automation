@@ -4,6 +4,9 @@ It is free and open source. It provides UI to create testcase and run those test
 
 You can then view status and screenshot of each step of testcase.
 
+Take a quick look below
+![Almond Automation Demo](https://3.bp.blogspot.com/-rL6riJfHaeI/WuEvqt32IxI/AAAAAAAAENU/MxB5ep3zEZ4IyDF0VDbNL91q8vqqmZEagCLcBGAs/s1600/automation-speed.gif)
+
 Almond Automation provides following feature
 -  UI to create and run testcase.
 - You can manage multiple projects from single UI.

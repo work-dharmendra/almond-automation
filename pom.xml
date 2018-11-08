@@ -13,7 +13,7 @@
         <javax.servlet.version>3.0.1</javax.servlet.version>
         <selenium.java.version>2.45.0</selenium.java.version>
         <slf4j.version>1.7.12</slf4j.version>
-        <spring.version>4.1.6.RELEASE</spring.version>
+        <spring.version>4.3.17.RELEASE</spring.version>
         <junit.version>4.12</junit.version>
         <jmockit.version>1.36</jmockit.version>
         <mockito.version>1.10.19</mockito.version>
