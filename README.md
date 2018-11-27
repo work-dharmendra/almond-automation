@@ -19,3 +19,49 @@ Almond Automation provides following feature
 - Support for macros to run same testcase with different values.
 
 Please visit [**Almond Automation**](http://almond-automation.blogspot.com/p/home.html) for complete documentation.
+
+You can use docker for quick testing.
+
+Create docker-compose.yaml
+```yaml
+selhub:
+  image: selenium/hub
+  ports:
+    - 4444:4444
+
+nodeff:
+  image: selenium/node-firefox-debug
+  ports:
+    - 5900
+  links:
+    - selhub:hub
+
+nodechrome:
+  image: selenium/node-chrome-debug
+  ports:
+    - 5900
+  links:
+    - selhub:hub
+
+almond-automation:
+  image: dharmendra82/almond-automation:latest
+  ports:
+    - 8080:8080
+    - 3306:3306
+  links:
+    - selhub:hub
+```
+
+Run below command to start **Almond Automation**
+
+```bash
+docker-compose up -d
+```
+
+This will create everything(mariadb, selenium grid) and you don't need to install anything.
+
+Access **Almond Automation** at below url
+
+```html
+http://localhost:8080/automation/
+```
